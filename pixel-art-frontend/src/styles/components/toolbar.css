@@ -1,0 +1,27 @@
+.toolbar {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem;
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+  }
+  
+  .tool-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--color-primary);
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  
+  .tool-btn:hover {
+    opacity: 0.8;
+  }
+  
+  .tool-btn.active {
+    background: var(--color-black);
+  }

@@ -1,0 +1,15 @@
+.canvas-page {
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    padding: 2rem;
+  }
+  
+  .canvas-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .canvas-title {
+    color: var(--color-black);
+    font-size: 2rem;
+  }

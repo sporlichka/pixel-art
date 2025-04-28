@@ -1,0 +1,19 @@
+/* Все @import должны быть в начале файла */
+@import './base/reset.css';
+@import './base/variables.css';
+
+/* Импорт компонентов */
+@import './components/canvas.css';
+@import './components/toolbar.css';
+@import './components/color-picker.css';
+
+/* Импорт страниц */
+@import './pages/home.css';
+@import './pages/canvas-page.css';
+
+/* Глобальные стили после импортов */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: var(--color-bg);
+}
