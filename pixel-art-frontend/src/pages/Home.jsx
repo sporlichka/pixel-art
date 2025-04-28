@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { saveNickname, getNickname } from '../utils/storage';
-import { getCanvases, createCanvas } from '../utils/api';
+import { api } from '../utils/api';
 import '../styles/main.css'; // Импортирует все стили через @import
 
 export default function Home() {
@@ -13,10 +13,10 @@ export default function Home() {
   useEffect(() => {
     if (getNickname()) navigate('/canvases');
     fetchCanvases();
-  }, []);
+  }, [navigate]);
 
   const fetchCanvases = async () => {
-    const { data } = await getCanvases();
+    const { data } = await api.getCanvases();
     setCanvases(data);
   };
 
@@ -26,7 +26,7 @@ export default function Home() {
   };
 
   const handleCreateCanvas = async () => {
-    await createCanvas(newCanvasName);
+    await api.createCanvas(newCanvasName);
     fetchCanvases();
   };
 
@@ -65,3 +65,4 @@ export default function Home() {
     </div>
   );
 }
+

@@ -5,7 +5,6 @@ import { api } from '../utils/api';
 // Замените вызовы:
 // Было: getCanvas(id)
 // Стало: api.getCanvas(id)
-import { getCanvas, updateCanvas } from '../utils/api';
 import Canvas from '../components/Canvas';
 import Toolbar from '../components/Toolbar';
 import '../styles/main.css';
@@ -72,7 +71,7 @@ export default function CanvasPage() {
   // Отправка обновлений на сервер
   const updateCanvasData = async (updatedPixels) => {
     try {
-      await updateCanvas(id, updatedPixels);
+      await api.updateCanvas(id, updatedPixels);
     } catch (error) {
       console.error('Error updating canvas:', error);
     }
