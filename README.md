@@ -4,14 +4,13 @@ PixelArt — это онлайн-приложение для совместно�
 📦 Стек технологий
 Frontend: React, Axios, CSS Grid
 Backend: Django REST Framework, PostgreSQL
-Деплой: Vercel (frontend), Railway (backend + DB)
-Дополнительно: CORS, Gunicorn, dj-database-url
+Деплой: Vercel (frontend)
+Дополнительно: CORS
 
 🚀 Установка и запуск
 
 Клонируйте репозиторий:
-git clone https://github.com/yourusername/pixelart-app.git
-cd pixelart-app
+git clone [https://github.com/yourusername/pixelart-app.git](https://github.com/sporlichka/pixel-art)
 
 Backend (Django):
 cd ./pixel-back/pixelback/
