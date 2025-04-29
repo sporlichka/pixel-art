@@ -1,9 +1,16 @@
-import { RouterProvider } from 'react-router-dom';
-import { router } from './routes';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import CanvasPage from './pages/CanvasPage';
+import NotFound from './pages/NotFound';
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/canvas/:id" element={<CanvasPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App;

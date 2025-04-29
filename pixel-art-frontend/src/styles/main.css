@@ -1,19 +1,142 @@
-/* Все @import должны быть в начале файла */
-@import './base/reset.css';
-@import './base/variables.css';
-
-/* Импорт компонентов */
-@import './components/canvas.css';
-@import './components/toolbar.css';
-@import './components/color-picker.css';
-
-/* Импорт страниц */
-@import './pages/home.css';
-@import './pages/canvas-page.css';
-
-/* Глобальные стили после импортов */
+/* Базовые стили */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  background-color: var(--color-bg);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Контейнеры */
+.canvas-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.canvas-container {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar {
+  width: 300px;
+  padding: 20px;
+  background-color: #e9e9e9;
+  border-left: 1px solid #ddd;
+}
+
+/* Участники */
+.participants-list {
+  margin-top: 20px;
+}
+
+.participants-list h3 {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.participant {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.online-badge {
+  margin-left: 10px;
+  padding: 2px 6px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 10px;
+  font-size: 0.8em;
+}
+
+/* Панель инструментов */
+.toolbar {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.toolbar-group {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.toolbar button {
+  padding: 8px 12px;
+  background-color: #3a86ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.toolbar button:hover {
+  background-color: #2667d6;
+}
+
+.toolbar button.active {
+  background-color: #ff4d4d;
+}
+
+.brush-size {
+  margin-top: 15px;
+}
+
+.brush-size label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Формы */
+.create-canvas form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.create-canvas input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.create-canvas button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error {
+  color: #ff4d4d;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+/* 404 */
+.not-found {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.home-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3a86ff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
 }

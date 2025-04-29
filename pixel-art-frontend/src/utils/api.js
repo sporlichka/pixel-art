@@ -1,15 +1,21 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/api';
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000/api',
+});
 
-export const api = {
+export default {
   // Холсты
-  getCanvases: () => axios.get(`${API_URL}/canvases/`),
-  getCanvas: (id) => axios.get(`${API_URL}/canvases/${id}/`),
-  createCanvas: (name) => axios.post(`${API_URL}/canvases/`, { name }),
-  updateCanvas: (id, data) => axios.patch(`${API_URL}/canvases/${id}/`, data),
+  getCanvases: () => api.get('/canvases/'),
+  createCanvas: (name) => api.post('/canvases/', { name }),
+  getCanvas: (id) => api.get(`/canvases/${id}/`),
+  updateCanvas: (id, data) => api.patch(`/canvases/${id}/`, data),
   
   // Участники
   joinCanvas: (canvasId, nickname) => 
-    axios.post(`${API_URL}/canvases/${canvasId}/join/`, { nickname })
+    api.post(`/canvases/${canvasId}/join/`, { nickname }),
+  
+  // Пиксели
+  updatePixel: (canvasId, x, y, color) => 
+    api.post(`/canvases/${canvasId}/pixels/`, { x, y, color })
 };
