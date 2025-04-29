@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import '../css/Canvas.css'; // Подключаем стили для холста
+import '../css/Pixel.css';
 const Header = ({ setNickname }) => {
   const [nicknameInput, setNicknameInput] = useState('');
 

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getCanvases, createCanvas } from '../services/api';
 import { Link } from 'react-router-dom';
-
+import '../css/Canvas.css'; // Подключаем стили для холста
+import '../css/Pixel.css';
 const Canvas = ({ nickname }) => {
   const [canvases, setCanvases] = useState([]); // Инициализация пустым массивом
   const [newCanvasName, setNewCanvasName] = useState('');
@@ -50,6 +51,7 @@ const Canvas = ({ nickname }) => {
 
   return (
     <div>
+      <br></br><br></br>
       <h2>Available Canvases</h2>
       <input
         type="text"

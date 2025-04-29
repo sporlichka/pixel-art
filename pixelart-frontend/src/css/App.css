@@ -1,43 +1,254 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .container {
-    max-width: 1200px;
-    width: 100%;
+.App {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 20px;
   }
   
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #333;
+  .App-header {
+    margin-bottom: 30px;
   }
   
-  button {
-    background-color: #007bff;
+  .App-title {
+    font-size: 2.5em;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .App-intro {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+  }
+  
+  .tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 30px;
+    align-items: center;
+  }
+  
+  .tools button {
+    background: var(--primary-color);
+    border: solid 1px var(--primary-color);
     color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .tools button:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+  }
+  
+  .tools input[type="color"] {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 5px;
+    background: white;
+  }
+  
+  .tools input[type="number"],
+  .tools input[type="text"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: solid 1px var(--primary-color);
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .results {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin-top: 30px;
+  }
+  
+  @media (max-width: 768px) {
+    .tools {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    .tools input[type="color"] {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tools {
+      grid-template-columns: 1fr;
+    }
+    
+    .App-title {
+      font-size: 1.8em;
+    }
+  }
+  /* Стили для ссылок */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 2px;
+  }
+  
+  a:hover {
+    color: #357abd;
+  }
+  
+  a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  /* Стиль для ссылок в навигации (если нужно) */
+  .nav-link {
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(74, 144, 226, 0.1);
+  }
+  
+  /* Стиль для кнопко-ссылок */
+  .link-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    text-align: center;
     transition: background-color 0.3s;
   }
   
-  button:hover {
-    background-color: #0056b3;
+  .link-button:hover {
+    background-color: #357abd;
+    color: white;
+    text-decoration: none;
+  }
+
+  /* Современные текстовые поля */
+input[type="text"],
+input[type="number"] {
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  margin: 8px 0;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+/* Современные кнопки */
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+button:hover {
+  background-color: #357abd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Специфичные стили для кнопки Set Nickname */
+.set-nickname-btn {
+  background-color: #4CAF50; /* Зеленый цвет */
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.set-nickname-btn:hover {
+  background-color: #3e8e41;
+}
+
+/* Контейнер для формы */
+.input-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+
+/* Современный placeholder */
+::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="number"] {
+    max-width: 100%;
   }
   
+  .input-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  button {
+    width: 100%;
+  }
+}

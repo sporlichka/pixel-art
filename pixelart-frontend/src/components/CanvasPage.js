@@ -57,6 +57,7 @@ const CanvasPage = ({ nickname }) => {
 
   return (
     <div>
+      <br></br> <br></br>
       <h2>Canvas {canvasId}</h2>
 
       <div>

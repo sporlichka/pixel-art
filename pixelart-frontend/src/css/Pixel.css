@@ -1,16 +1,33 @@
-.pixel-selected {
-    border: 2px solid #333;
-  }
-  
-  .color-picker {
-    margin-top: 10px;
-    padding: 10px;
+.row {
     display: flex;
-    justify-content: center;
   }
   
-  .color-picker input {
-    margin-right: 10px;
+  .pixel {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    transition: all 0.2s;
     cursor: pointer;
   }
   
+  .pixel:hover {
+    transform: scale(1.05);
+    z-index: 1;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  }
+  
+  .pixel.current-color {
+    border: 3px solid #333;
+    box-shadow: 0 0 10px var(--primary-color);
+  }
+  
+  .listing-features {
+    margin: 20px 0;
+  }
+  
+  .listing-features li {
+    font-size: 14px;
+    list-style-type: none;
+    padding: 5px 0;
+  }
