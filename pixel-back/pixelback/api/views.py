@@ -43,7 +43,7 @@ class CanvasViewSet(viewsets.ModelViewSet):
             )
         return Response({"message": "Pixels updated"}, status=status.HTTP_200_OK)
 
-    @action(detail=True, methods=['post'])
+    @action(detail=True, methods=['post'], url_path='leave')
     def leave(self, request, pk=None):
         """
         Удаляет участника с холста.
