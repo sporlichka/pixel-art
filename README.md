@@ -30,6 +30,7 @@ python manage.py runserver
 cd .\pixelart-frontend\   
 npm install
 npm start
+---
 💡 Процесс разработки
 Планирование:
 
